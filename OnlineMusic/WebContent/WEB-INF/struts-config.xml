@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "
+http://struts.apache.org/dtds/struts-config_1_2.dtd">
+<struts-config>
+  <data-sources />
+  <form-beans>
+  	<form-bean name="songForm" type="com.model.SongForm"/>
+  	<form-bean name="managerForm" type="com.model.ManagerForm"/>
+  </form-beans>
+  <global-exceptions />
+  <global-forwards />
+  <action-mappings>
+  	<action name="songForm" path="/song" scope="request" type="com.action.SongAction" validate="true">
+  		<forward name="main" path="/main.jsp"/>
+  		<forward name="songQuery" path="/songList.jsp"/>
+  		<forward name="search" path="/searchResult.jsp"/>
+  		<forward name="download" path="/download.jsp"/>
+  		<forward name="tryListen" path="/tryListen.jsp"/>
+  		<forward name="continuePlay" path="/continuePlay.jsp"/>
+  		<forward name="adm_search" path="/adm_main.jsp"/>
+  		<forward name="addok" path="/addok.jsp"/>
+  		<forward name="checkMusic" path="/checkMusic.jsp"></forward>
+  		<forward name="delok" path="/delok.jsp"/>
+  		<forward name="error" path="/error.jsp"/>
+  	</action>
+  	  	<action name="managerForm" path="/manager" scope="request" type="com.action.ManagerAction" validate="true">
+  		<forward name="managerLoginok" path="/login_ok.jsp"/>
+  		<forward name="error" path="/error.jsp"/>
+  	</action>
+  </action-mappings>
+  <controller processorClass="com.action.SelfRequestProcessor" />
+  <message-resources parameter="com.yourcompany.struts.ApplicationResources" />
+</struts-config>
+
